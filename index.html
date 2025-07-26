@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer</title>
+    <!-- THIS IS THE CRUCIAL LINE THAT LOADS THE STYLES -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Resume Analyzer</h1>
+            <p>Upload your resume in PDF format to get an instant analysis and score.</p>
+        </header>
+
+        <main>
+            <form id="resume-form">
+                <label for="resume-file" class="file-label">
+                    <span>📁 Choose PDF File</span>
+                    <input type="file" id="resume-file" accept=".pdf" required>
+                </label>
+                <span id="file-name">No file selected</span>
+                <button type="submit">Analyze Resume</button>
+            </form>
+
+            <div id="loader" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing... This may take a moment.</p>
+            </div>
+
+            <div id="results-container" class="hidden">
+                <h2 id="overall-score"></h2>
+                
+                <div id="quick-view" class="hidden">
+                    <h3>Candidate Quick View</h3>
+                    <p><strong>👤 Name:</strong> <span id="candidate-name"></span></p>
+                    <p><strong>📧 Email:</strong> <span id="candidate-email"></span></p>
+                    <p><strong>📞 Phone:</strong> <span id="candidate-phone"></span></p>
+                    <p><strong>🌟 Top Skill:</strong> <span id="candidate-skill"></span></p>
+                </div>
+
+                <h3>Full Analysis</h3>
+                <div id="full-analysis" class="analysis-content"></div>
+            </div>
+
+            <div id="error-message" class="hidden"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
